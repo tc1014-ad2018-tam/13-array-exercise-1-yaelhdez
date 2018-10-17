@@ -2,26 +2,32 @@
 //A01412016
 //A01412016@ITESM.MX
 
+
 #include <stdio.h>
 
 int main() {
-int numbers[5]={0,0,0,0,0}; //Array variable
+    int n; //Esta variable le dará un tamaño al array
 
-for (int i=0; i<5;i++){    //This loop will fill the array
-     printf("Gimme a number\n");
-     scanf("%d",&numbers[i]);
-}
+    printf("¿Cuantos numeros vas a introducir?\n");
+    scanf("%d",&n); //Peticion de la variable que le dará un tamaño al array
 
-    for (int j = 0; j <5 ; j++) { //This loop print the normal output
-        printf("%d ",numbers[j]);
-    }
-    
-    printf("\n"); //Line jump
+    int num[n]; //array con tamaño n
 
-    for (int k = 4; k >= 0 ; k--) { //This loop print the  reverse output
-        printf("%d ",numbers[k]);
+    for (int i = 0; i <n ; ++i) { //Este ciclo pedirá los numeros al usuario
+        printf("Dame el elemento %i",i+1);
+        scanf("%i",&num[i]); //Peticion de la posicion i del array
     }
 
+    printf("Los numeros que me diste son:\n ");
+
+    for (int j = 0; j <n ; ++j) {
+        printf("%i ",num[j]); //este ciclo imprimirá los numeros introducidos por el usuario en orden
+    }
+    printf("\nLos numeros que me diste, pero en orden inverso son: \n");
+
+    for (int k = n-1; k >=0 ; --k) {
+        printf("%i ",num[k]); //este ciclo imprimirá los numeros introducidos por el usuario en orden inverso
+    }
 
     return 0;
 }
